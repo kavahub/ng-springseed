@@ -1,0 +1,40 @@
+<nz-alert nzType="info" nzMessage="操作指南" nzDescription="点击'登录'按钮，会跳转到登录页面，登录后，自动跳转到本页面并显示登录成功" nzShowIcon>
+</nz-alert>
+
+<nz-card style="margin-top: 5px;" nzTitle="用户登录" [nzExtra]="extraTemplate">
+    <nz-alert nzBanner nzType="error" nzMessage="未登录" *ngIf="!isLoggedIn"></nz-alert>
+    <nz-alert nzBanner nzType="success" nzMessage="已成功登录" *ngIf="isLoggedIn"></nz-alert>
+
+    <div *ngIf="userProfile">
+        <br />
+        <nz-descriptions nzTitle="用户信息" nzBordered>
+          <nz-descriptions-item nzTitle="ID">{{ userProfile.id }}</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="用户名">{{ userProfile.username }}</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="姓">{{ userProfile.firstName }}</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="名">{{ userProfile.lastName }}</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="邮箱">{{ userProfile.email }}</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="是否邮箱校验">
+            <nz-switch [ngModel]="userProfile.emailVerified" nzCheckedChildren="是" nzUnCheckedChildren="否" nzDisabled>
+            </nz-switch>
+          </nz-descriptions-item>
+        </nz-descriptions>
+    
+        <br />
+        <nz-descriptions nzTitle="用户JSON信息" nzBordered>
+          <nz-descriptions-item nzTitle="JSON">
+            <pre> {{userProfile | json}} </pre>
+          </nz-descriptions-item>
+        </nz-descriptions>
+      </div>
+</nz-card>
+
+<ng-template #extraTemplate>
+    <button nz-button nzType="primary" (click)="logout()" *ngIf="isLoggedIn">
+        <i nz-icon nzType="logout"></i>
+        登出
+    </button>
+    <button nz-button nzType="primary" (click)="login()" *ngIf="!isLoggedIn">
+        <i nz-icon nzType="login"></i>
+        登录
+    </button>
+</ng-template>

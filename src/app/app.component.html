@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+<nz-layout class="layout">
+    <nz-header>
+      <div class="logo"></div>
+    </nz-header>
+    <nz-layout>
+      <nz-sider [nzWidth]="200" style="background:#fff">
+        <ul nz-menu [nzMode]="'inline'">
+            <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+                <a title routerLink="home">
+                  <span title><i nz-icon nzType="home"></i>首页</span>
+                </a>
+              </li>            
+          <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+            <a title routerLink="keycloak">
+              <span title><i nz-icon nzType="user"></i>Keycloak</span>
+            </a>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout style="padding:0 8px 8px">
+        <nz-content style="background:#fff; padding: 24px; min-height: 280px;">
+          <router-outlet></router-outlet>
+        </nz-content>
+      </nz-layout>
+    </nz-layout>
+  </nz-layout>

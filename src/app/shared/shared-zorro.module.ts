@@ -23,6 +23,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 export const SHARED_ZORRO_MODULES = [
   NzFormModule,
@@ -49,5 +50,6 @@ export const SHARED_ZORRO_MODULES = [
   NzSpinModule,
   NzDescriptionsModule,
   NzDividerModule,
-  NzListModule
+  NzListModule,
+  NzLayoutModule
 ];

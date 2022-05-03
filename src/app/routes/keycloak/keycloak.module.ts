@@ -2,10 +2,9 @@ import { NgModule, Type } from '@angular/core';
 import { SharedModule } from '@shared';
 
 import { KeycloakRoutingModule } from './keycloak-routing.module';
-import { KeycloakLoginComponent } from './login.component';
-import { KeycloakUserInfoComponent } from './user-info.component';
+import { KeycloakHomeComponent } from './home.component';
 
-const COMPONENTS: Array<Type<void>> = [KeycloakUserInfoComponent, KeycloakLoginComponent];
+const COMPONENTS: Array<Type<void>> = [KeycloakHomeComponent];
 
 @NgModule({
   imports: [SharedModule, KeycloakRoutingModule],

@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutHomeComponent } from '@layout';
+import { LayoutBlankComponent } from '@layout';
 
-import { KeycloakLoginComponent } from './login.component';
-import { KeycloakUserInfoComponent } from './user-info.component';
+import { KeycloakHomeComponent } from './home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LayoutHomeComponent,
+    component: LayoutBlankComponent,
     children: [
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
-      { path: 'login', component: KeycloakLoginComponent },
-      { path: 'user-info', component: KeycloakUserInfoComponent }
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: KeycloakHomeComponent },
       
     ]
   },
